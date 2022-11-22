@@ -1,0 +1,28 @@
+﻿@model List<Pizza>
+
+@if (Model.Count() == 0)
+{
+    <h2>nessuna pizza trovata</h2>
+}
+else
+{
+    <div class=" d-flex justify-content-around">
+
+        @foreach (Pizza pizza in Model)
+        {
+            <div class="card" style="width: 18rem;">
+                <img alt="@pizza.Name" src="@pizza.Image" class="img-fluid">
+                <div class="card-body">
+                    <h5 class="card-title">Nome: @pizza.Name</h5>
+                    <p class="card-text">Descrizione: @pizza.Description</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="@Url.Action("Detail",new {id = pizza.Id})" class="btn btn-primary" role="button">SHOW</a>
+                        <strong class="">Prezzo: @pizza.Price €</strong>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+
