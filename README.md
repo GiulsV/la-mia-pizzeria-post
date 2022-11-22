@@ -1,6 +1,6 @@
 #la-mia-pizzeria-post
-22/11/22
 
+22/11/22
 Abbiamo la lista delle pizze, abbiamo i dettagli delle pizze...perchè non creare la pagina per la creazione di una nuova pizza?
 
 Aggiungiamo quindi tutto il codice necessario per mostrare il form per la creazione di una nuova pizza e per il salvataggio dei dati nella lista che abbiamo in memoria.

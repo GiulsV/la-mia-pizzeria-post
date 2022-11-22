@@ -16,6 +16,11 @@ namespace la_mia_pizzeria_model.Models
 
         public double Price { get; set; }
 
+        //costruttore vuoto
+        public Pizza(){
+
+        }
+
         public Pizza(string name, string description, string image, double price)
         {
             Name = name;
