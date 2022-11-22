@@ -6,23 +6,32 @@
 }
 else
 {
-    <div class=" d-flex justify-content-around">
-
-        @foreach (Pizza pizza in Model)
-        {
-            <div class="card" style="width: 18rem;">
-                <img alt="@pizza.Name" src="@pizza.Image" class="img-fluid">
-                <div class="card-body">
-                    <h5 class="card-title">Nome: @pizza.Name</h5>
-                    <p class="card-text">Descrizione: @pizza.Description</p>
-                    <div class="d-flex justify-content-between">
-                        <a href="@Url.Action("Detail",new {id = pizza.Id})" class="btn btn-primary" role="button">SHOW</a>
-                        <strong class="">Prezzo: @pizza.Price €</strong>
-                    </div>
-                </div>
-            </div>
-        }
-    </div>
+    <table class="table table-hover table-sm caption-top">
+        <caption>Lista Pizze</caption>
+        <thead class="table-primary">
+            <tr class="text-capitalize">
+                <th scope="col">id</th>
+                <th scope="col">img</th>
+                <th scope="col">nome</th>
+                <th scope="col">desccrizione</th>
+                <th scope="col">prezzo</th>
+                <th scope="col">azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Pizza pizza in Model)
+            {
+                <tr>
+                    <th scope="row">@pizza.Id</th>
+                    <td><img alt="@pizza.Name" src="@pizza.Image" class=" img-fluid"></td>
+                    <th>@pizza.Name</th>
+                    <td>@pizza.Description</td>
+                    <td>@pizza.Price</td>
+                    <td>
+                        <a href="@Url.Action("Detail",new {id = pizza.Id})" class="text-capitalize btn btn-primary">show</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
-
-
